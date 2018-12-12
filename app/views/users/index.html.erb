@@ -1,0 +1,29 @@
+
+<head>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129331504-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129331504-1');
+</script>
+
+</head>
+  <div class="main users-index">
+    <div class="container">
+      <h1 class="users-heading">Users</h1>
+      <% @users.each do |user| %>
+      <div class="users-index-item">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{user.image_name}" %>">
+        </div>
+        <div class="user-right">
+          <%= link_to(user.name, "/users/#{user.id}") %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>

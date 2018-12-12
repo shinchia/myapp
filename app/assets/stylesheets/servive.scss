@@ -1,0 +1,33 @@
+.service img{
+width:30%;
+}
+
+.service{
+  padding: 100px 0 200px 0;
+  text-align: center;}
+
+  .service h2{
+    position: relative;
+    bottom: 120px;
+  }
+
+  .service h3{
+    color: rgba(255, 255, 255,0.4);
+
+  }
+
+    .service h1{
+      color: rgba(255, 255, 255, 0.7);
+      background-color:rgba(135, 206, 235, 0.7);
+    }
+
+    @media screen and (max-width: 700px){
+      .service h2{
+        position: relative;
+        bottom: 1%;
+       font-size: 100%}
+
+       .service img{
+       width:50%;
+       }
+      }

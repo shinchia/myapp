@@ -1,0 +1,28 @@
+<head>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129331504-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129331504-1');
+</script>
+
+</head>
+
+<div class="w">
+<div class="blogs-wrapper">
+  <div class="blog-wrapper">
+    <% @blogs.each do |blog| %>
+    <div class="blogs-right">
+      <img src="<%= "/blog_sheets/#{blog.sheet_name}" %>">
+      <div class = "txt-box">
+        <p><%= link_to(blog.content, "/blogs/#{blog.id}") %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>

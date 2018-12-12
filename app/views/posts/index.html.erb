@@ -1,0 +1,24 @@
+<head>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129331504-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129331504-1');
+</script>
+
+</head>
+<div class="top-wrapper">
+  <div class="main posts-index">
+    <div class="container">
+      <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <%= link_to(post.content, "/posts/#{post.id}") %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

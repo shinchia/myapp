@@ -1,0 +1,38 @@
+<head>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129331504-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129331504-1');
+</script>
+
+</head>
+<div class="top-wrapper">
+  <div class="main users-edit">
+    <div class="container">
+      <div class="form-heading">アカウント編集</div>
+      <div class="form users-form">
+        <div class="form-body">
+          <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+          <% end %>
+          <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+          <p>ユーザー名</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>画像</p>
+          <input name="image" type="file">
+          <p>メールアドレス</p>
+          <input name="email" value="<%= @user.email %>">
+          <input type="submit" value="保存">
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

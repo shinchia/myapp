@@ -1,0 +1,35 @@
+<head>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129331504-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129331504-1');
+</script>
+
+</head>
+<div class = "blog-show-wrapper">
+<div class="blogs-show-item">
+  <img src="<%= "/blog_sheets/#{@blog.sheet_name}" %>">
+  <p>
+    <% if @current_paper %>
+    <%= @blog.created_at %>
+    <%= link_to("編集", "/blogs/#{@blog.id}/edit") %>
+    <%= link_to("削除", "/blogs/#{@blog.id}/destroy", {method: "blog"}) %>
+    <% end %>
+  </p>
+</div>
+
+  <div class = "blog-show-text">
+    <h2>
+      <%= @blog.content %>
+    </h2>
+    <h3>
+      <%= simple_format(@blog.sentence)%>
+    </h3>
+  </div>
+
+</div>

@@ -1,0 +1,29 @@
+<head>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129331504-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129331504-1');
+</script>
+
+</head>
+
+<div class="top-wrapper">
+  <h1>Log In</h1>
+  <% if @error_message %>
+  <div class="form-error">
+    <%= @error_message %>
+  </div>
+  <% end %>
+  <%= form_tag("/papers/login") do %>
+  <p>メールアドレス</p>
+  <input name="email" value="<%= @email %>">
+  <p>パスワード</p>
+  <input type="password" name="password" value="<%= @password %>">
+  <input type="submit" value="Log In">
+  <% end %>
+</div>
