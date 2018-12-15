@@ -54,6 +54,6 @@ class BlogsController < ApplicationController
         @blog.destroy
         # 変数flash[:notice]に、指定されたメッセージを代入してください
 
-        redirect_to("/blogs/index")
+        redirect_to("/home/index")
       end
 end
