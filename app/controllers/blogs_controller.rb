@@ -19,7 +19,7 @@ class BlogsController < ApplicationController
         if @blog.save
           # 変数flash[:notice]に、指定されたメッセージを代入してください
 
-          redirect_to("/blogs/index")
+          redirect_to("/home/index")
         else
           render("/blogs/new")
         end

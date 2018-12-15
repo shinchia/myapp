@@ -58,7 +58,7 @@ class PapersController < ApplicationController
     if @paper
       session[:paper_id] = @paper.id
       flash[:notice] = "ログインしました"
-      redirect_to("/blogs/index")
+      redirect_to("/home/index")
     else
       @error_message = "メールアドレスまたはパスワードが間違っています"
       @email = params[:email]
@@ -70,14 +70,14 @@ class PapersController < ApplicationController
   def logout
     session[:paper_id] = nil
     flash[:notice] = "ログアウトしました"
-    redirect_to("/blogs/index")
+    redirect_to("/home/index")
   end
 
   # ensure_correct_paperを定義してください
   def ensure_correct_paper
     if @current_paper.id != params[:id].to_i
       flash[:notice] = "権限がありません"
-      redirect_to("/blogs/index")
+      redirect_to("/home/index")
     end
   end
 end

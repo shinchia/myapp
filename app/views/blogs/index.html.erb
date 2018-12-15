@@ -11,10 +11,49 @@
 </script>
 
 </head>
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
 
-<div class="w">
-<div class="blogs-wrapper">
-  <div class="blog-wrapper">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
+            <ul>
+              <% if @current_paper %>
+              <li><%= link_to(@current_paper.name, "/papers/#{@current_paper.id}") %></li>
+                <li><%= link_to("投稿一覧", "/blogs/index") %></li>
+                <li><%= link_to("新規投稿", "/blogs/new") %></li>
+                <li><%= link_to("権限付与", "/papers/signup") %></li>
+                <li><%= link_to("権限一覧", "/papers/index") %></li>
+                <li><%= link_to("ログアウト", "/papers/logout", {method: :post}) %></li>
+                <% end %>
+
+      </ul>
+    </div>
+  </div>
+</div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <% if @current_paper %>
+        <li><%= link_to(@current_paper.name, "/papers/#{@current_paper.id}") %></li>
+          <li><%= link_to("投稿一覧", "/blogs/index") %></li>
+          <li><%= link_to("新規投稿", "/blogs/new") %></li>
+          <li><%= link_to("権限付与", "/papers/signup") %></li>
+          <li><%= link_to("権限一覧", "/papers/index") %></li>
+          <li><%= link_to("ログアウト", "/papers/logout", {method: :post}) %></li>
+          <% end %>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+</nav>
+
+<div class="content-sentence">
+<div class="container-fluid">
+  <div class="text-center">
     <% @blogs.each do |blog| %>
     <div class="blogs-right">
       <img src="<%= "/blog_sheets/#{blog.sheet_name}" %>">

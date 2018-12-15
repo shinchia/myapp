@@ -11,20 +11,52 @@
 </script>
 
 </head>
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
 
-<div class="papers-wrapper">
-  <div class="main posts-new">
-    <div class="container">
-      <h1 class="form-heading">投稿する</h1>
-      <%= form_tag("/blogs/create") do %>
-        <div class="form">
-          <div class="form-body">
-            <textarea name="content"></textarea>
-            <textarea name="sentence"></textarea>
-            <input type="submit" value="投稿">
-          </div>
-        </div>
-      <% end %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
+            <ul>
+              <li><%= link_to("投稿一覧", "/blogs/index") %></li>
+              <li><%= link_to("新規投稿", "/blogs/new") %></li>
+              <li><%= link_to("権限付与", "/papers/signup") %></li>
+              <li><%= link_to("権限一覧", "/papers/index") %></li>
+              <li><%= link_to("ログアウト", "/papers/logout", {method: :post}) %></li>
+
+      </ul>
     </div>
   </div>
 </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to("投稿一覧", "/blogs/index") %></li>
+        <li><%= link_to("新規投稿", "/blogs/new") %></li>
+        <li><%= link_to("権限付与", "/papers/signup") %></li>
+        <li><%= link_to("権限一覧", "/papers/index") %></li>
+        <li><%= link_to("ログアウト", "/papers/logout", {method: :post}) %></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+</nav>
+<div class="content-sentence">
+<div class="container-fluid">
+  <div class="text-center">
+      <h1 class="form-heading">投稿する</h1>
+
+      <%= form_tag("/blogs/create") do %>
+      <div class = "textarea-content">
+            <textarea name="content"></textarea>
+          </div>
+          <div class = "textarea-sentence">
+            <textarea name="sentence"></textarea>
+          </div>
+            <input type="submit" value="投稿">
+      <% end %>
+    </div>
+    </div>
