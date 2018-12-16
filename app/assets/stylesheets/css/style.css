@@ -4,6 +4,15 @@ body, html {
   background-attachment: fixed!important;
   background-size: cover!important;
 }
+
+@media screen and (max-width: 700px){
+	body, html {
+		font-family: 'fantasy', serif;
+		background-image: url("/397.jpg")!important;
+	  background-attachment: fixed!important;
+	  background-size: cover!important;
+	}
+}
 h1, h2, h3, h4 {
 	font-family: 'Raleway', sans-serif;
 }
