@@ -29,25 +29,20 @@
 /*アイコンのスペース*/
 
 body, html {
-	font-family: 'fantasy', serif;}
-  body, html {
-	background-image: url("/plane-1632598.png")!important;}
-  body, html {background-attachment: fixed!important;}
-  body, html {background-size: cover!important;}
+	font-family: 'fantasy', serif;
+	background-image: url("/plane-1632598.png")!important;
+  background-attachment: fixed!important;
+  background-size: cover!important;
+}
 
-
-@media screen and (max-width: 500px){
+@media screen and (max-width: 700px){
 	body, html {
-		font-family: 'fantasy', serif;}}
-    @media screen and (max-width: 500px){
-    	body, html {background-image: url("/397.jpg")!important;}}
-      @media screen and (max-width: 500px){
-      	body, html {
-    background-attachment: fixed!important;}}
-    @media screen and (max-width: 500px){
-      body, html{
-    background-size:500px!important;}}
-
+		font-family: 'fantasy', serif;
+		background-image: url("/397.jpg")!important;
+	  background-attachment: fixed!important;
+	  background-size: cover!important;
+	}
+}
   header {
   padding:10px;
 }
