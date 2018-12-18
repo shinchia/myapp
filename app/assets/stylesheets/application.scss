@@ -39,8 +39,16 @@ body, html {
 	body, html {
 		font-family: 'fantasy', serif;
 		background-image: url("/397.jpg")!important;
-	  background-attachment: fixed!important;
-	  background-size: cover!important;
+    background-size: 100% auto;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 108px;
+    content: "";
+    z-index: -1;
 	}
 }
   header {
